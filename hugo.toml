@@ -3,13 +3,15 @@ languageCode = "en-us"
 title = "Your Writeup Blog"
 theme = "PaperMod"
 
-paginate = 10
 enableRobotsTXT = true
 buildDrafts = false
 buildFuture = false
 buildExpired = false
 
 enableEmoji = true
+
+[pagination]
+  pagerSize = 10
 
 # ------------------------------------------------------------------
 # Taxonomies: besides the default tags/categories, we add
@@ -24,13 +26,13 @@ enableEmoji = true
 
 [params]
   env = "production"
-  title = "My write-ups"
+  title = "Your Writeup Blog"
   description = "Writeups and notes on cybersecurity, pentesting, and CTFs"
   keywords = ["cybersecurity", "pentesting", "CTF", "writeup", "TryHackMe", "HackTheBox"]
   author = "Your Name"
 
   defaultTheme = "dark"
-  disableThemeToggle = true
+  disableThemeToggle = false
 
   ShowReadingTime = true
   ShowShareButtons = false
@@ -68,7 +70,7 @@ enableEmoji = true
 
   [[params.socialIcons]]
     name = "github"
-    url = "https://github.com/An4chr0n"
+    url = "https://github.com/yourusername"
   [[params.socialIcons]]
     name = "rss"
     url = "index.xml"
