@@ -1,0 +1,175 @@
+baseURL = "https://example.com/"
+languageCode = "en-us"
+title = "Your Writeup Blog"
+theme = "PaperMod"
+
+paginate = 10
+enableRobotsTXT = true
+buildDrafts = false
+buildFuture = false
+buildExpired = false
+
+enableEmoji = true
+
+# ------------------------------------------------------------------
+# Taxonomies: besides the default tags/categories, we add
+# "platform" (TryHackMe, HackTheBox, ...) and "vulnerability"
+# (SQLi, XSS, privilege escalation, ...)
+# ------------------------------------------------------------------
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+  platform = "platforms"
+  vulnerability = "vulnerabilities"
+
+[params]
+  env = "production"
+  title = "My write-ups"
+  description = "Writeups and notes on cybersecurity, pentesting, and CTFs"
+  keywords = ["cybersecurity", "pentesting", "CTF", "writeup", "TryHackMe", "HackTheBox"]
+  author = "Your Name"
+
+  defaultTheme = "dark"
+  disableThemeToggle = true
+
+  ShowReadingTime = true
+  ShowShareButtons = false
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowWordCount = true
+  ShowToc = true
+  TocOpen = false
+  ShowRssButtonInSectionTermList = true
+  UseHugoToc = true
+  disableSpecial1stPost = false
+  hidemeta = false
+  hideSummary = false
+  showtoc = true
+  tocopen = false
+
+  # Home page in "Profile" mode with quick links
+  [params.profileMode]
+    enabled = true
+    title = "Your Writeup Blog"
+    subtitle = "Notes and writeups on cybersecurity, pentesting, and CTFs"
+    imageUrl = ""
+    imageWidth = 120
+    imageHeight = 120
+    buttons = [
+      { name = "Writeups", url = "posts" },
+      { name = "Tags", url = "tags" },
+      { name = "Platforms", url = "platforms" }
+    ]
+
+  [params.homeInfoParams]
+    Title = "Hi 👋"
+    Content = "Writeups and notes on CTFs, pentesting, and vulnerabilities I come across exploring TryHackMe, HackTheBox, and other platforms."
+
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/An4chr0n"
+  [[params.socialIcons]]
+    name = "rss"
+    url = "index.xml"
+
+  [params.assets]
+    disableHLJS = true
+    favicon = "/favicon.ico"
+    favicon16x16 = "/favicon-16x16.png"
+    favicon32x32 = "/favicon-32x32.png"
+    apple_touch_icon = "/apple-touch-icon.png"
+
+  [params.cover]
+    hidden = false
+    hiddenInList = false
+    hiddenInSingle = false
+
+  # Client-side search (Fuse.js) — requires content/search.md with layout "search"
+  [params.fuseOpts]
+    isCaseSensitive = false
+    shouldSort = true
+    location = 0
+    distance = 1000
+    threshold = 0.4
+    minMatchCharLength = 0
+    keys = ["title", "permalink", "summary", "content"]
+
+# ------------------------------------------------------------------
+# Main menu
+# ------------------------------------------------------------------
+[menu]
+  [[menu.main]]
+    identifier = "posts"
+    name = "Writeups"
+    url = "/posts/"
+    weight = 10
+  [[menu.main]]
+    identifier = "platforms"
+    name = "Platforms"
+    url = "/platforms/"
+    weight = 20
+  [[menu.main]]
+    identifier = "vulnerabilities"
+    name = "Vulnerabilities"
+    url = "/vulnerabilities/"
+    weight = 30
+  [[menu.main]]
+    identifier = "tags"
+    name = "Tags"
+    url = "/tags/"
+    weight = 40
+  [[menu.main]]
+    identifier = "search"
+    name = "Search"
+    url = "/search/"
+    weight = 50
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 60
+
+# ------------------------------------------------------------------
+# Syntax highlighting for code blocks (commands, exploits, etc.)
+# ------------------------------------------------------------------
+[markup]
+  [markup.highlight]
+    noClasses = false
+    codeFences = true
+    guessSyntax = true
+    lineNos = true
+    style = "monokai"
+  [markup.goldmark.renderer]
+    unsafe = true
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 4
+    ordered = false
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5
+  filename = "sitemap.xml"
+
+[privacy]
+  [privacy.vimeo]
+    disabled = false
+    simple = true
+  [privacy.twitter]
+    disabled = false
+    enableDNT = true
+    simple = true
+  [privacy.instagram]
+    disabled = false
+    simple = true
+  [privacy.youtube]
+    disabled = false
+    privacyEnhanced = true
+
+[imaging]
+  quality = 85
+  anchor = "Smart"
