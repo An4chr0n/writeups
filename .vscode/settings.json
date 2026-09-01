@@ -1,9 +1,4 @@
 {
-    "frontMatter.content.pageFolders": [
-        {
-            "title": "content",
-            "path": "[[workspace]]/content"
-        }
-    ],
-    "frontMatter.git.enabled": true
+    "[markdown]": {
+    }
 }
